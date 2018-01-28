@@ -22,12 +22,11 @@ byte CAT5171::getWiper()
 {
   byte pos = 0;
   
-  // Must be 7 bit address
   Wire.requestFrom(B0101100, 1);
   
-  while(Wire.available())    // slave may send less than requested
+  while(Wire.available())
   { 
-    pos = Wire.read();    // receive a byte as character
+    pos = Wire.read();
   }
   
   return pos;
